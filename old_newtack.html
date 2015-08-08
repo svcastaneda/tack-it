@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="static_dir/stylesheet.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  <link href='http://fonts.googleapis.com/css?family=Londrina+Shadow|Coming+Soon|Oswald' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="static_dir/pictures/tac.png" type="image/png"/>
+  <title>
+    My Dashboard
+  </title>
+</head>
+<body>
+  <div id="header">
+    <p id="name"> {{ name }}'s </p>
+    <a href="home.html">
+      <img src="static_dir/pictures/logos/logooo1.png" height="80" alt="logo"  class="floatLeft">
+    </a>
+  </div>
+    
+    <!-- insert logout button -->
+      
+  <ul id="tabs">
+      <a href="my-dashboard.html"><li class="oswald10 red" style="opacity: 1">MY BOARD</li></a>
+      <a href="settings.html"><li class="oswald10 turquoise">SETTINGS</li></a>
+      <a href="extra.html"><li class="oswald10 pink">EXTRAS</li></a>
+  </ul>
+  
+  
+  <div id="dashboardBody">
+  
+    {% for note in notes %}
+      <a href="/newtack.html">
+        <img src="static_dir/pictures/button-icons/new-file.png" width="32" height="32" alt="New Tack/Note">
+      </a>
+      
+      <div class="noteBody">
+        
+        <div id="postButtons">
+            <img src="static_dir/pictures/button-icons/gear-icon-24px.png" width="14" alt="edit post" class="dashboardButtons">
+
+          <a href='{{ note.delete() }}'>
+            <img src="static_dir/pictures/button-icons/x-icon-32px.png" width="12" alt="edit post" class="dashboardButtons">
+          </a>
+        </div>
+        
+        <h3>
+          <!-- Title: -->
+          {{ note.title }}
+        </h3>
+        <p>
+          <!-- Content: -->
+          {{ note.content }}
+        </p>
+        
+          
+           
+      </div>        
+    {% endfor %}
+    
+    <!-- insert 'add new list' button here -->
+    
+ 
+    
+  	{% for item in lists %}
+      <div class="listBody">
+        <div id="postButtons">
+          <a href="#"> 
+            <img src="static_dir/pictures/button-icons/gear-icon-24px.png" width="14" alt="edit post" class="dashboardButtons">
+          </a>
+          
+          <a href="#">
+            <img src="static_dir/pictures/button-icons/x-icon-32px.png" width="12" alt="edit post" class="dashboardButtons">
+          </a>
+        </div>
+        
+        <h3>
+          <!--Title: -->
+          {{ lists.listTitle }}
+        </h3>
+        
+        <p>
+          <!--Content: -->
+          {{ items }}
+        </p>
+        
+
+
+    
+  </div>
+
+      {% endfor %}
+
+</div>
+  
+</body>
+</html

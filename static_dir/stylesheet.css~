@@ -1,0 +1,598 @@
+body {
+  background-image:url('../static_dir/pictures/backgrounds/cork.jpg');
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  font-size: 100%;
+  font-family: "Oswald", sans-serif;
+  background-color: #4A1212;
+}
+
+button:hover {
+  opacity: .8;
+}
+
+h1, h2 {
+  font-family: "Coming Soon", cursive;
+}
+
+input {
+  border: solid 1px black;
+  border-radius: 10px;
+  height: 30px;
+  width: 180px;
+  opacity: .3;
+}
+
+a {
+  text-decoration: none;
+}
+
+textarea {
+  outline: gray;
+  background-color: #f0e590;
+  font-family: "Coming Soon";
+  resize: none;
+}
+
+
+/*       IDs       */
+
+#header {
+  text-align: center;
+  width:800px;
+  height: 165px;
+  background-image: url(../static_dir/pictures/paper/torn-lined-paper.png);
+  padding: 42px 0px;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  -ms-transform: rotate(-8deg); /* IE 9 */
+  -webkit-transform: rotate(-8deg); /* Chrome, Safari, Opera */
+  transform: rotate(-8deg);
+  z-index: 1;
+  position: absolute;
+  font-family: 'Londrina Shadow', cursive;
+  display: block;
+}
+
+#dashheader {
+  text-align: center;
+  width:800px;
+  height: 225px;
+  background-image: url(../static_dir/pictures/paper/torn-lined-paper.png);
+  padding: 15px;
+  margin-top: 120px;
+  margin-left: 650px;
+  -ms-transform: rotate(10deg); /* IE 9 */
+  -webkit-transform: rotate(10deg); /* Chrome, Safari, Opera */
+  transform: rotate(10deg);
+  z-index: 10;
+  
+}
+
+#intro {
+  z-index: 5;
+  margin-top:50px;
+  margin-left: 0;
+  margin-right: 0;
+  width: 950px;
+  height: 600px;
+  float: left;
+  background-image: url('../static_dir/pictures/backgrounds/red-texture.jpg');
+/*    background-size: contain;*/
+  background-repeat: no-repeat;
+  -ms-transform: rotate(3deg); /* IE 9 */
+  -webkit-transform: rotate(2deg); /* Chrome, Safari, Opera */
+  transform: rotate(2deg);
+  box-shadow: 10px 10px 100px #222;
+}
+
+#description {
+  width: 400px;
+  height: 300px;
+  float: left;
+  margin-top: 250px;
+  margin-left: 100px;
+  -ms-transform: rotate(-2deg); /* IE 9 */
+  -webkit-transform: rotate(-2deg); /* Chrome, Safari, Opera */
+  transform: rotate(-2deg);
+  font-family: 'Coming Soon';
+  font-size:1.4em;
+  text-align: center;
+  float: left;
+  padding-right: 30px;
+  padding-top: 80px;
+}
+
+#new_user {
+  width: 300px;
+  height: 300px;
+  float: left;
+  margin-top: 250px;
+  -ms-transform: rotate(-2deg); /* IE 9 */
+  -webkit-transform: rotate(-2deg); /* Chrome, Safari, Opera */
+  transform: rotate(-2deg);
+  font-family: 'Coming Soon', cursive;
+  font-size:1.4em;
+  text-align: right;
+  padding-right: 30px;
+  padding-left: 50px;
+  border-left: solid black;
+  border-left: solid black;
+}
+
+#login_form {
+  padding: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  z-index: 10;
+}
+
+#postit {
+  width: 345px;
+  position: absolute;
+  z-index: -1;
+  shadow: 10px;
+}
+
+#login {
+  position: absolute;
+  z-index: 100;
+  margin-left: 900px;
+  -ms-transform: rotate(6deg); /* IE 9 */
+  -webkit-transform: rotate(6deg); /* Chrome, Safari, Opera */
+  transform: rotate(6deg);
+}
+
+#footer {
+  float: bottom;
+  text-align: center;
+}
+
+#footer a {
+  text-decoration: none;
+  color: #000;
+  opacity: 0.7;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+  color: #000;
+  opacity: 1;
+}
+
+#already {
+  margin-left: 50px;
+  margin-top: 80px;
+  padding-left: 35px;
+  padding-right: 25px;
+  text-align: center;
+  font-family: 'Oswald';
+  
+}
+
+#header p {
+  float: left;
+  font-family: "Londrina Shadow";
+  font-size: 3.2em;
+/*  font-weight: bold;*/
+  color: #613535;
+  text-align: center;
+}
+
+#logoSmall {
+  position: absolute;
+}
+
+#logo {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 35px;
+}
+
+#googleLogo {
+  padding: 200;
+  margin-left: 7%;
+  width: 400px;
+  height: 390px;
+  text-align: left;
+  margin-bottom: 50px;
+  margin-top: 75px;
+  float: left;
+}
+
+#tabs {
+  position: absolute;
+  width: 600px;
+  -ms-transform: rotate(-8deg); /* IE 9 */
+  -webkit-transform: rotate(-8deg); /* Chrome, Safari, Opera */
+  transform: rotate(-8deg);
+  margin-top: 40px;
+  z-index: 0;
+  margin-left: 100px;
+  height: 100px;
+}
+
+#tabs li {  
+  display: inline;
+  list-style-type: none;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  opacity: 0.6;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tabs li:hover {
+  opacity: 0.8;
+}
+
+#name {
+  float: left;
+  padding-left: 100px;
+}
+
+#dashboardBody {
+  margin-left: 125px;
+/*  margin-right: auto;*/
+  margin-top: 350px;
+  position: absolute;
+  float: right;
+  width: 80%;
+  height: 800;
+
+}
+
+#newTack {
+  background-image: url('pictures/backgrounds/yellow_paper_seamless.jpg');
+  background-repeat: repeat;
+  background-size: contain;
+  font-family: "Coming Soon";
+  line-height: 10%;
+  border: double 3px #a68b35;
+  border-radius: 3px;
+  box-shadow: 5px 5px 3px #222;
+  width: 350px;
+  padding: 10px 25px;
+  float: left;
+  display: block;
+  text-align: center;
+  margin: 375px 10px 50px 40px;
+}
+
+/*        Buttons       */
+
+.dashboardButtons {
+  opacity: 0.3;
+}
+
+.dashboardButtons:hover {
+  opacity: 1.0;
+}
+
+.postButtons {
+  float: right;
+}
+
+
+/*        sidebar       */
+
+#sidebar {
+  float:left;
+  display: block;
+  width: 100px;
+  margin-left: 50px;
+  margin-top: 250px;
+}
+
+#newPost {
+/*  padding-right: 35%;*/
+  margin-left: 650px;
+/*  margin-top: 5px;*/
+}
+
+#addNewPost {
+  background-color: #B3B3B3;
+  text-decoration: none;
+  color: #646464;
+  display: block;
+  box-shadow: 5px 5px 7px #222;
+  border: double 3px gray;
+  float: left;
+  /*margin-top: 125px;
+  margin-right: 15px;*/
+  padding: 25px;
+  padding-bottom: 15px;
+  display: block;
+  opacity: 0.9;
+  text-align: center;
+}
+
+#addNewPost:hover {
+  opacity: 1.0;
+  display: inline;
+}
+
+#logoutButton {
+  float: right;
+  margin-right: 55px;
+  margin-top: -20px;
+}
+
+#fb {
+  float: left;
+  margin-top: 70px;
+  margin-left: 50px;
+}
+
+
+/*        Classes       */
+
+.test {
+  background-color: white;
+  border: 5px solid green;
+  border-radius: 30px;
+  width: 300px;
+  height: 250px;
+  padding-top: 50px;
+  text-align: center;
+  float: left;
+  margin-right: 10px;
+}
+
+.test2 {
+  background-color: white;
+  border: 5px solid green;
+  border-radius: 30px;
+  width: 300px;
+  height: 250px;
+  padding-top: 50px;
+  text-align: center;
+  float: left;
+  margin-top: 400px;  
+}
+
+.big {
+  font-family: 'Source Sans Pro', sans-serif;
+  size: 2em;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 75px;
+  position: relative;
+  width: 1000px;
+  height: 800;
+}
+
+.center1 {
+  margin: auto;
+  position: absolute;
+  width: 1000px;
+  height: 800;
+}
+
+.red {  
+  background-image: url('pictures/tabs/red-left-tab.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  padding-right: 80px;
+}
+  
+.turquoise {  
+  background-image: url('pictures/tabs/turquoise-center-tab.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  padding-right: 80px;
+}
+
+.pink {  
+  background-image: url('pictures/tabs/pink-right-tab.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  padding-left: 70px;
+  padding-right: 40px;
+}  
+
+
+
+/*        Settings        */
+
+#devBioContent {
+  padding: 0 25px;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 14px;
+  
+}
+  
+.devBio {
+  background-image: url('pictures/paper/settings-options-paper.jpg');
+  box-shadow: 10px 10px 100px #222;
+  width: 400px;
+  height: 390px;
+  text-align: left;
+  float: left;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  list-style: none;
+}
+
+.devBiosBody {
+  margin-left: 125px;
+/*  margin-right: auto;*/
+  margin-top: 375px;
+  position: absolute;
+  float: right;
+  width: 1000px;
+  height: 800;
+}
+
+.devBiosBody h1 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+
+/*        extras page       */
+
+
+
+
+/*        Notes       */
+
+.noteBody {
+  width: 400px;
+  height: 300px;
+  /*background-image: url('pictures/paper/gray_construction_paper_seamless.jpg');
+  background-repeat: repeat;*/
+  background-color: lightyellow;
+  background: rgb(255,255,136); /* Old browsers */
+  background: linear-gradient(-45deg, #e5cf48, 77%,#ffe650, 100%); /* W3C */
+  /*box-shadow: 5px 5px 7px #222;
+  border: double 3px gray;*/
+  border-radius-left: -100px;
+  border-bottom-right-radius: 60px 5px;
+  box-shadow: 4px 2px 20px #222;
+  font-family: "Coming Soon";
+  float: left;
+  margin-right: 15px;
+  padding: 1% 2% 2% 2%;
+  display: block;
+  word-wrap: break-word;
+  overflow: auto;
+  text-align: center;
+  /*     ^^ will allow for scrollbar if necessary */
+  
+}
+
+
+.noteBody h3 {
+  text-align: center;
+}
+
+
+.listBody {
+  max-width: 300px;
+  background-image: url('pictures/paper/lined-paper.png');
+  background-repeat: repeat;
+  box-shadow: 5px 5px 7px #222;
+  border: double 3px gray;
+  float: left;
+  margin-right: 15px;
+  padding: 1% 2% 2% 2%;
+  display: block;
+  line-height: 130%;
+  font-family: "Coming Soon";
+}
+
+.listBody h3 {
+  text-align: center;
+}
+
+
+
+/*       Fonts       */
+.oswald {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  color: #4A1212;
+}
+
+.oswald2 {
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  opacity: .3;
+  font-size: 1.7em;
+    
+}
+
+.oswald3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1em;
+  color: #4A1212;
+}
+
+.coming {
+  font-family: 'Coming Soon';
+  font-size: 2em;
+}
+
+.oswald10 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  color: black;
+  text-align: center;
+}
+
+.floatLeft {
+  float: left;
+  margin-top:40px;
+  padding-left: 35px;
+}
+
+.button {
+  border-radius: 50%;
+  width: 175px;
+  height: 175px;
+  background-color: white;
+  background-size: 175px 175px;
+  float: left;
+/*    box-shadow: 4px 2px 20px #222;*/
+  box-shadow: inset 1px 15px 9px -6px rgba(255,255,255,.2)	;
+  /* width and height can be anything, as long as they're equal */
+}
+
+.postit {
+  width: 250px;
+  height: 250px;
+  float: left;
+  text-align: center;
+  background-color: lightyellow;
+  background: rgb(255,255,136); /* Old browsers */
+  background: linear-gradient(-45deg, #e5cf48, 77%,#ffe650, 100%); /* W3C */
+  border-radius-left: -100px;
+  border-bottom-right-radius: 60px 5px;
+  box-shadow: 4px 2px 20px #222;
+  word-wrap: break-word;
+  overflow: auto;
+  font-family: 'Coming Soon';
+/*     ^^ will allow for scrollbar if necessary */
+  
+    
+}
+
+.flipped
+{
+  width: 250px;
+  height: 250px;
+  float: left;
+  text-align: center;
+  background-color: lightyellow;
+  background: rgb(255,255,136); /* Old browsers */
+  background: linear-gradient(-45deg, #e5cf48, 77%,#ffe650, 100%); /* W3C */
+  border-radius-left: -100px;
+  border-bottom-right-radius: 60px 5px;
+  box-shadow: 4px 2px 20px #222;
+  word-wrap: break-word;
+  overflow: auto;
+  font-family: 'Coming Soon';
+/*     ^^ will allow for scrollbar if necessary */
+    
+    

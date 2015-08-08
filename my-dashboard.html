@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="static_dir/stylesheet.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  <link href='http://fonts.googleapis.com/css?family=Calligraffitti|Just+Me+Again+Down+Here|Londrina+Shadow|Oswald|Nothing+You+Could+Do|Coming+Soon' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="static_dir/pictures/tac.png" type="image/png"/>
+  <link rel="icon" href="static_dir/pictures/tac.png" type="image/png"/>
+  <title>
+    My Dashboard
+  </title>
+  
+  
+  
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+<script>
+
+
+// functions for edit note
+function changeClass(id){
+    var content = document.getElementById(id);
+    
+	if(content.className == "note_container block draggable")
+		content.className = "note_container rotated draggable";
+	else
+		content.className = "note_container block draggable";
+    //content.offset({top: x, left: y});
+        
+}
+
+
+function changeBlue(id){
+    document.getElementById(id).getElementsByClassName('front')[0].style.backgroundColor = "lightBlue";
+    changeClass(id);
+}
+
+function changeYellow(id){
+    document.getElementById(id).getElementsByClassName('front')[0].style.backgroundColor = "rgb(255,255,136)";
+        changeClass(id);
+}
+
+function changeRed(id){
+    document.getElementById(id).getElementsByClassName('front')[0].style.backgroundColor = "lightpink";
+    changeClass(id);
+}
+
+function changeGreen(id){
+    document.getElementById(id).getElementsByClassName('front')[0].style.backgroundColor = "#94D4A9";
+        changeClass(id);
+}
+
+function changeFont1(id){
+    document.getElementById(id).getElementsByClassName('front')[0].style.fontFamily = "Coming Soon"; 
+        changeClass(id);
+}
+
+function changeFont2(id){
+    document.getElementById(id).getElementsByClassName('front')[0].style.fontFamily = "Calligraffitti"; 
+        changeClass(id);
+}
+
+function changeFont3(id){
+    document.getElementById(id).getElementsByClassName('front')[0].style.fontFamily = "Just Me Again Down Here"; 
+    document.getElementById(id).getElementsByClassName('front')[0].style.fontSize = "1.3em"; 
+        changeClass(id);
+}
+
+function changeFont4(id){
+    document.getElementById(id).getElementsByClassName('front')[0].style.fontFamily = "Nothing You Could Do"; 
+        changeClass(id);
+}
+
+//  stops from highlighting text on page while dragging
+function pauseEvent(e){
+    if(e.stopPropagation) e.stopPropagation();
+    if(e.preventDefault) e.preventDefault();
+    e.cancelBubble=true;
+    e.returnValue=false;
+    return false;
+}
+
+// dragging functions 
+$(document).ready(function() {
+    var $dragging = null;
+
+    $(document.body).on("mousemove", function(e) {    
+       if ($dragging) {
+       	targetPos = $(e.target).position()
+            $dragging.offset({
+                top: e.pageY - 100,
+                left: e.pageX - 100
+                
+         });
+         
+        }
+    });
+    
+
+    $(document.body).on("mousedown", ".draggable", function (e) {
+        if($(e.target).hasClass('draggable')){
+          $dragging = $(e.target);
+        pauseEvent(e)
+      } 
+    });
+
+
+
+    $(document.body).on("mouseup", function (e) {
+        $dragging = null;
+     
+    });
+});
+
+</script>
+
+
+</head>
+<body>
+  
+  <div id="header" style="z-index: -1"> 
+    <p id="name"> {{ name }}'s </p>
+    
+    <img src="static_dir/pictures/logos/logooo1.png" height="80" alt="logo" id="logo">
+    <!-- class="floatLeft" -->
+    <a href="{{ logout }}" title="logout">
+      <img src="static_dir/pictures/button-icons/logout-1.png" width="66px" alt="Logout" id="logoutButton">
+    </a>
+    
+    <!-- <a href="/newtack">
+
+      <img src="static_dir/pictures/button-icons/add-new-tack.png" width="40" alt="add new post" id="newPost" title="add new tack">
+    </a> -->
+    
+    <a href="https://www.facebook.com/tack.it.google" target="_blank">
+      <img src="static_dir/pictures/facebook_round2.png" width="50" alt="Facebook" id="fb" title="Facebook">
+    </a>
+  </div>
+    
+    <!-- insert logout button -->
+      
+  <ul id="tabs">
+      <a href="/my-dashboard" title="my dashboard"><li class="oswald10 red" style="opacity: 1">MY BOARD</li></a>
+      <a href="/developers" title="settings"><li id="selected" class="oswald10 turquoise">ABOUT US</li></a>
+      <a href="/extra" title="extras"><li class="oswald10 pink">EXTRAS</li></a>
+  </ul>
+
+
+  
+    
+  
+  <div class="dashboardBody">
+
+
+<!-- post new notes -->
+    {% for note in notes %}
+    
+
+	<div id="{{ note.key.id() }}" class="note_container block draggable">
+		<!-- <div id="block" class="block side draggable"> -->
+			<span class="front">
+             <div id ="inNoteButtons">
+                    <!--EDIT ICON-->
+                        <a title="customize" class="goback" onclick="changeClass({{ note.key.id() }})">
+                            <img src="static_dir/pictures/button-icons/gear-icon-24px.png" width="14" alt="customize" class="dashboardButtons">
+                             </a>
+                            
+
+                    <!--DELETE ICON-->
+                            <a href="{{ note.delete() }}" title="delete">
+                                <img src="static_dir/pictures/button-icons/x-icon-32px.png" width="12" alt="edit post" class="dashboardButtons">
+                            </a>
+                    </div>
+                    <div id="noteTextContent">          
+                        <h3> {{ note.title }} </h3>
+
+                    <!-- NOTE CONTENT-->          
+                        <p> {{ note.content }} </p>
+                    </div>
+			</span>
+			<span class="back">
+                    <br>
+                    <p> Color: </p>
+                    <div class="colorBox" id="yellowColorBox" onclick="changeYellow({{ note.key.id() }} )"></div>
+                    <div class="colorBox" id="blueColorBox" onclick="changeBlue({{ note.key.id() }} )"></div>
+                    <div class="colorBox" id="redColorBox" onclick="changeRed({{ note.key.id() }} )"></div>
+                    <div class="colorBox" id="greenColorBox" onclick="changeGreen({{ note.key.id() }} )"></div>
+                    <br>
+                    <p> Font: </p>
+                    <table>
+                      <tr>
+                        <td class="coming" onclick="changeFont1({{ note.key.id() }})">default</td>
+                        <td id="calligraffitti" onclick="changeFont2({{ note.key.id() }})">font 2</td>
+                      </tr>
+                      <tr>
+                        <td id="justMeAgain" onclick="changeFont3({{ note.key.id() }})">font 3</td>
+                        <td id="nothingYouCouldDo" onclick="changeFont4({{ note.key.id() }})">font 4</td>
+                      </tr>
+                    </table>
+			</span>
+            <!-- </div> -->
+	</div>
+
+    {% endfor %}
+
+        <!--PINS-->
+        {% for image in images %}          <!--Retrives each custom URL for each picture-->
+            
+            <div class="button shadow draggable" style="background-image: url({{ image.urlString }});">
+                <!--DELETE ICON-->
+                        <a href="{{ image.deleteImage() }}"title="delete">
+                            <img src="static_dir/pictures/button-icons/x-icon-32px.png" width="12" alt="edit post" class="dashboardButtons1">
+                        </a>
+                <!-- <img src="{{ url }}"> -->
+                <p>
+            </div>
+                
+        {% endfor %}
+  
+  </div>
+  
+
+
+<a href="/newtack">
+<div id="newtacpic">
+</div>
+</a>    
+  <!-- </div> -->
+  
+</body>
+</html>

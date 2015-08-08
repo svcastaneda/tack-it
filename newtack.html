@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="static_dir/stylesheet.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  <link href='http://fonts.googleapis.com/css?family=Londrina+Shadow|Coming+Soon|Oswald' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="static_dir/pictures/tac.png" type="image/png"/>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  
+  <script>
+    
+ var Main = function() {
+     $("#newButtonAdd").hide();
+     $(".front1").hide();
+     $(".arrowBack").hide();
+     $("#buttonadd").click(button)
+     $("#noteadd").click(note)
+  }	 
+  
+ var button = function(){
+     $("#newButtonAdd").show();
+     $("#opening").hide();
+      $(".arrowBack").show();
+ }
+ 
+ var note = function(){
+     $(".front1").show();
+     $("#opening").hide();
+      $(".arrowBack").show();
+ }
+ 
+   $(document).ready(Main);
+  </script>
+  
+  <title>
+    Add New Tack
+  </title>
+</head>
+<body>
+   
+   <div id="header">
+     <p id="name"> {{ name }}'s </p>
+       <img src="static_dir/pictures/logos/logooo1.png" height="80" alt="logo"  class="floatLeft">
+     
+     <a href="{{ logout }}" title="logout">
+       <img src="static_dir/pictures/button-icons/logout-1.png" width="66px" alt="Logout" id="logoutButton">
+     </a>
+     
+      <a href="https://www.facebook.com/tack.it.google" target="_blank">
+      <img src="static_dir/pictures/facebook_round2.png" width="50" alt="Facebook" id="fb" title="Facebook">
+    </a>
+   </div>
+   
+      
+  <ul id="tabs">
+      <a href="/my-dashboard"><li class="oswald10 red" style="opacity: 1">MY BOARD</li></a>
+      <a href="/developers"><li class="oswald10 turquoise">ABOUT US</li></a>
+      <a href="/extra"><li class="oswald10 pink">EXTRAS</li></a>
+  </ul>
+  
+
+<!-- create a note/button -->
+
+ <div id="newButtonAdd">
+
+     <img src="static_dir/pictures/buttonadd.png" alt="buttonadd" width="200">
+    
+    <form action= "{{ upload_url }}" method="POST" enctype="multipart/form-data" id="postImage">
+      <input type="file" name="file" accept="image/*"><br>
+      <button type="submit" name="submit" id="cursorClick">Post</button>
+    </form>
+  </div>
+
+ <div class="front1">
+    <form action="/addNote" method="post" id="front1">
+      <input type="text" name="title" placeholder="Title"><br>
+      <textarea rows="10" cols="35" style="display: block" name="content" required wrap="hard" placeholder="Write your note here"></textarea>
+      <button type="submit" name="submit" id="cursorClick">Post</button>
+  </div> 
+<a href="/newtack"> <img src="static_dir/pictures/arrow-19.png" alt="arrow-19" class="arrowBack"></a>
+
+<div id="opening">
+  <img src="static_dir/pictures/tacadd.png" height="150px" id="tacadd" alt="tacadd">
+  <br>
+  <img src="static_dir/pictures/buttonadd.png" id="buttonadd"  alt="buttonadd">
+  <img src="static_dir/pictures/noteadd.png" id="noteadd" alt="noteadd">
+</div>
+
+  
+</body>
+</html>
